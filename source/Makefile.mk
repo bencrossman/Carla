@@ -283,8 +283,8 @@ endif
 PYRCC4 ?= $(shell which pyrcc4 2>/dev/null)
 PYUIC4 ?= $(shell which pyuic4 2>/dev/null)
 
-PYRCC5 ?= $(shell which pyrcc5 2>/dev/null)
-PYUIC5 ?= $(shell which pyuic5 2>/dev/null)
+PYRCC5 ?= true
+PYUIC5 ?= true
 
 HAVE_PYQT4=false
 HAVE_PYQT5=false
@@ -395,7 +395,7 @@ endif
 
 ifeq ($(HAVE_LIBLO),true)
 LIBLO_FLAGS = $(shell pkg-config $(PKG_CONFIG_FLAGS) --cflags liblo)
-LIBLO_LIBS  = $(shell pkg-config $(PKG_CONFIG_FLAGS) --libs liblo)
+LIBLO_LIBS  = -llo.Dll
 endif
 
 ifeq ($(HAVE_LIBMAGIC),true)

@@ -54,10 +54,10 @@ local _ARCH_PREFIX="${2}"
 local _MINGW_PREFIX="${3}-w64-mingw32"
 
 export PREFIX=${TARGETDIR}/carla-w${_ARCH_PREFIX}
-export PATH=/opt/mingw${_ARCH}/bin:${PREFIX}/bin/usr/sbin:/usr/bin:/sbin:/bin
+#export PATH=/opt/mingw${_ARCH}/bin:${PREFIX}/bin/usr/sbin:/usr/bin:/sbin:/bin:/mingw64/bin
 export PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig
 
-export AR=${_MINGW_PREFIX}-ar
+export AR=${_MINGW_PREFIX}-gcc-ar
 export CC=${_MINGW_PREFIX}-gcc
 export CXX=${_MINGW_PREFIX}-g++
 export STRIP=${_MINGW_PREFIX}-strip
@@ -77,18 +77,14 @@ export_vars "${ARCH}" "${ARCH_PREFIX}" "${CPUARCH}"
 export WINEARCH=win${ARCH}
 export WINEDEBUG=-all
 export WINEPREFIX=~/.winepy3_x${ARCH}
-export PYTHON_EXE="wine C:\\\\Python34\\\\python.exe"
+export PYTHON_EXE="python3"
 
 export CXFREEZE="$PYTHON_EXE C:\\\\Python34\\\\Scripts\\\\cxfreeze"
 export PYUIC="$PYTHON_EXE -m PyQt5.uic.pyuic"
-export PYRCC="wine C:\\\\Python34\\\\Lib\\\\site-packages\\\\PyQt5\\\\pyrcc5.exe"
+export PYRCC="pyrcc5"
 
 make ${MAKE_ARGS}
 
-if [ x"${ARCH}" != x"32" ]; then
-  export_vars "32" "32" "i686"
-  make ${MAKE_ARGS} win32
-fi
 
 # Testing:
 echo "export WINEPREFIX=~/.winepy3_x${ARCH}"

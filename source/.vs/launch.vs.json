@@ -1,0 +1,17 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "type": "cppdbg",
+      "name": "a.exe",
+      "project": "a.exe",
+      "cwd": "${workspaceRoot}",
+      "program": "${debugInfo.target}",
+      "processId": 89668,
+      "MIMode": "gdb",
+      "miDebuggerPath": "D:\\msys64\\mingw64\\bin\\gdb.exe",
+      "externalConsole": true
+    }
+  ]
+}

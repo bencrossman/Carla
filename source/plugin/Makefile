@@ -309,7 +309,7 @@ $(BINDIR)/carla.lv2/manifest.ttl: $(OBJDIR)/carla-lv2-export.cpp.o
 
 	@echo "Generating LV2 ttl data"
 ifeq ($(BUILDING_FOR_WINDOWS),true)
-	@cd $(BINDIR) && wine ./carla-lv2-export$(APP_EXT)
+	@cd $(BINDIR) && ./carla-lv2-export$(APP_EXT)
 else
 	@cd $(BINDIR) && ./carla-lv2-export$(APP_EXT)
 endif
