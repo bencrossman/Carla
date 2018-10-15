@@ -222,7 +222,7 @@ bool CarlaEngineEventPort::writeMidiEvent(const uint32_t time, const uint8_t cha
 
         const uint8_t status(uint8_t(MIDI_GET_STATUS_FROM_DATA(data)));
 
-        if (status == MIDI_STATUS_CONTROL_CHANGE)
+        /*if (status == MIDI_STATUS_CONTROL_CHANGE)
         {
             CARLA_SAFE_ASSERT_RETURN(size >= 2, true);
 
@@ -251,7 +251,7 @@ bool CarlaEngineEventPort::writeMidiEvent(const uint32_t time, const uint8_t cha
                 event.ctrl.value = 0.0f;
                 return true;
             }
-        }
+        }*/
 
         if (status == MIDI_STATUS_PROGRAM_CHANGE)
         {
