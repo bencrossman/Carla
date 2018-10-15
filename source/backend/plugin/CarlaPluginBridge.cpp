@@ -1284,7 +1284,8 @@ public:
                         break;
 
                     case kEngineControlEventTypeMidiProgram:
-                        if (pData->options & PLUGIN_OPTION_MAP_PROGRAM_CHANGES)
+
+                        // How will program changes get to the plugin when we don't want to map? if (pData->options & PLUGIN_OPTION_MAP_PROGRAM_CHANGES)
                         {
                             fShmRtClientControl.writeOpcode(kPluginBridgeRtClientControlEventMidiProgram);
                             fShmRtClientControl.writeUInt(event.time);

@@ -36,7 +36,7 @@ uint8_t EngineControlEvent::convertToMidiData(const uint8_t channel, uint8_t dat
 
         data[0] = static_cast<uint8_t>(MIDI_STATUS_CONTROL_CHANGE | (channel & MIDI_CHANNEL_BIT));
 
-        if (MIDI_IS_CONTROL_BANK_SELECT(param))
+        if (false) // MIDI_IS_CONTROL_BANK_SELECT(param)) This strips LSB Bank change (32). we need thisfor  M1/Wavestation
         {
             data[1] = MIDI_CONTROL_BANK_SELECT;
             data[2] = uint8_t(carla_fixedValue<float>(0.0f, static_cast<float>(MAX_MIDI_VALUE-1), value));
@@ -99,7 +99,7 @@ void EngineEvent::fillFromMidiData(const uint8_t size, const uint8_t* const data
 
         const uint8_t midiControl(data[1]);
 
-        if (MIDI_IS_CONTROL_BANK_SELECT(midiControl))
+        if (false) // kEngineControlEventTypeMidiBank doesn't support LSB/MSB so treat them as standard Control Messages. MIDI_IS_CONTROL_BANK_SELECT(midiControl))
         {
             CARLA_SAFE_ASSERT_RETURN(size >= 3,);
 
