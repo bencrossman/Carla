@@ -1,0 +1,41 @@
+apt-get install wineasio
+
+apt-get install git gitk meld
+regsvr32 wineasio
+
+apt-cache search
+apt-get purge
+apt-get remove
+chown user -R .
+
+#recusive search
+grep -rn '.' -e "Midi bank"
+
+#hex edit
+vi then :%!xxd
+hexdump -C filename
+
+#midi monitor
+amidi -p virtual -d
+
+apt-get install g++ libjack-dev
+cmake -G "Unix Makefiles"
+cmake -DCMAKE_BUILD_TYPE=Debug
+
+gdb 
+r
+bt full
+
+timedOut
+#Carla
+http://linuxmusicians.com/viewtopic.php?f=47&t=12812
+
+export PATH=/opt/mingw32/bin:/opt/mingw32/i686-w64-mingw32/bin:$PATH
+export CC=i686-w64-mingw32-gcc
+export CXX=i686-w64-mingw32-g++
+export PKG_CONFIG_PATH=/opt/mingw32/lib/pkgconfig
+export WIN32=true
+
+
+True Pianos
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Shell Extensions

@@ -1,0 +1,7 @@
+M1 - lists current bank and mode
+Wavestation - same as M1
+OPX - current loaded bank (no way to save default bank in Forte - Carla seems ok)
+TP - nothing
+Sampler - nothing
+
+All others work fine
