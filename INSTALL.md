@@ -129,3 +129,5 @@ pacnman -S mingw-w64-x86_64-python3-cx_Freeze
 https://blogs.msdn.microsoft.com/vcblog/2017/07/19/using-mingw-and-cygwin-with-visual-cpp-and-open-folder/
 
 Can't just create a VS version because code has not that crossplatform (pthread's is incompatible)
+
+See bin/notes.txt for more unix stuff
